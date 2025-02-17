@@ -1,0 +1,189 @@
+:root {
+  --app-min-width: 1336px;
+  --breadcrumb-link-color: #2d9bb2;
+  --app-background-color: #f7f9f8;
+  --main-background-color: #ffffff;
+  --table-checkbox-unchecked-color: #ffffff;
+  --layout-boder-color: #dde0df;
+  --search-form-background-color: #f7f9f8;
+  --field-required-color: #f94b50;
+  --form-lable-color: #1f1f1f;
+  --multi-select-selected-item-background-color: #ebeeed;
+  --multi-select-selected-item-text-color: #5b5c5b;
+  --table-checkbox-selected-color: #554596;
+  --table-even-row-color: #f1f4f3;
+  --table-odd-row-color: #ffffff;
+  --table-cell-link-color: #554596;
+  --table-title-color: #1f1f1f;
+  --menu-bg-color: #f1f4f3;
+  --menu-title-color: #5b5c5b;
+  --breadcrumb-item-color: #2d9bb2;
+  --header-avatar-name-color: #5b5c5b;
+  --header-menu-button-color: #2d9bb2;
+  --header-app-name-color: #135678;
+  --header-divider-color: #b9bcbb;
+  --header-sub-title-color: #6e706f;
+}
+
+body {
+  min-width: var(--app-min-width);
+  overflow-x: auto;
+}
+.ant-breadcrumb {
+  .ant-breadcrumb-link {
+    color: var(--breadcrumb-link-color);
+  }
+  li:last-child .ant-breadcrumb-link {
+    font-weight: bold;
+  }
+}
+
+.base_form_item {
+  margin-bottom: 0px;
+  label {
+    padding-left: 5px;
+    color: var(--form-lable-color);
+    &.ant-form-item-required:not(.ant-form-item-required-mark-optional) {
+      &::before {
+        content: "" !important;
+        width: 4px;
+        height: 4px;
+        background-color: var(--field-required-color);
+        border-radius: 50%;
+        position: absolute;
+        left: 0px;
+        top: 10px;
+      }
+    }
+    font-weight: bold;
+    &::after {
+      content: "" !important;
+    }
+  }
+}
+
+.base_select {
+  &.ant-select-multiple .ant-select-prefix {
+    margin-inline-start: 4px;
+  }
+  &.ant-select-single:not(.ant-select-customize-input) .ant-select-selector {
+    padding: 0 8px;
+  }
+
+  &.ant-select-outlined.ant-select-multiple .ant-select-selection-item {
+    background-color: var(--multi-select-selected-item-background-color);
+    border-radius: 12px;
+    color: var(--multi-select-selected-item-text-color);
+  }
+}
+
+/* Css for tabs */
+.base-header-content .ant-tabs-nav {
+  margin: 0;
+  height: 100%;
+  .ant-tabs-tab {
+    padding: 16px 20px 16px 20px;
+    .ant-tabs-tab-btn {
+      color: #979998;
+      font-size: 14px;
+      line-height: 21px;
+    }
+  }
+  .ant-tabs-tab-active {
+    .ant-tabs-tab-btn {
+      color: #1f1f1f;
+    }
+  }
+}
+
+/* CSS for Switch */
+.ant-switch {
+  background: #ebeeed;
+}
+.ant-switch.ant-switch-checked {
+  background-color: #ebeeed;
+}
+.ant-switch.ant-switch-checked:hover:not(.ant-switch-disabled) {
+  background-color: inherit;
+}
+.ant-switch .ant-switch-inner .ant-switch-inner-checked,
+.ant-switch .ant-switch-inner .ant-switch-inner-unchecked {
+  display: flex;
+  align-items: center;
+}
+
+/* CSS for Left menu */
+.base_left_menu {
+  .ant-menu-submenu-title {
+    padding-inline-end: 14px;
+    //padding-inline-start: 14px;
+    .menu_close_icon {
+      display: none;
+    }
+    &[aria-expanded="true"] {
+      .menu_expand_icon {
+        display: none;
+      }
+      .menu_close_icon {
+        display: block;
+      }
+    }
+  }
+}
+
+/* CSS for Breadcrumbs */
+.base_breadcrumbs {
+  &.ant-breadcrumb {
+    .ant-breadcrumb-separator {
+      margin-inline: 3px;
+    }
+  }
+}
+
+/* CSS for Button */
+.ant-btn .ant-btn-icon > svg {
+  margin-top: 4px;
+}
+.ant-btn {
+  gap: 4px;
+}
+.ant-btn-lg {
+  border-radius: 2px;
+}
+
+/* CSS for Table */
+.dashboard-table-area {
+  .ant-table-cell.ant-table-selection-column {
+    padding-inline-start: 0;
+    padding-inline-end: 0;
+  }
+  // .bg-row-even-color{
+  //   background-color:  ;
+  // }
+  // .bg-row-even-color
+}
+
+/* CSS for Sider */
+.ant-menu-light {
+  background: inherit;
+}
+.ant-menu-title-content {
+  font-size: 13px;
+  line-height: 19.5px;
+  font-weight: 400;
+}
+.ant-layout-sider {
+  flex: 0 0 230px !important;
+  max-width: 230px !important;
+  min-width: 230px !important;
+  width: 230px !important;
+}
+
+// CSS for checkbox
+.ant-checkbox-indeterminate .ant-checkbox-inner:after {
+  height: 2px;
+  background-color: var(--table-checkbox-unchecked-color);
+}
+.ant-checkbox-indeterminate .ant-checkbox-inner {
+  background-color: var(--table-checkbox-selected-color) !important;
+}
